@@ -1,3 +1,49 @@
 <h1>
   {{title}}
 </h1>
+
+<h2>項目清單</h2>
+
+<ul>
+  <li *ngFor="let hero of heroes">{{hero.fullName}}</li>
+</ul>
+
+<h2>傳入子元件的用法</h2>
+
+<hero-detail
+  *ngFor="let hero of heroes"
+  [hero]="hero"></hero-detail>
+
+<h2>帶索引值的 NgFor 用法</h2>
+
+<table border="1">
+  <tr>
+    <th>編號</th>
+    <th>姓名</th>
+    <th>索引值</th>
+    <th>第一筆</th>
+    <th><strong>索引值</strong>是否為奇數</th>
+    <th><strong>索引值</strong>是否為偶數</th>
+    <th>最末筆</th>
+  </tr>
+  <tr *ngFor="let hero of heroes; let index=index; let first=first; let odd=odd; let even=even; let last=last">
+    <td>{{index+1}}</td>
+    <td>{{hero.fullName}}</td>
+    <td>{{index}}</td>
+    <td>{{first}}</td>
+    <td>{{odd}}</td>
+    <td>{{even}}</td>
+    <td>{{last}}</td>
+  </tr>
+</table>
+
+<h2>特殊的 NgForTrackBy 用法</h2>
+
+修改第一筆姓名:
+<input type="text" [(ngModel)]="heroes[0].fullName">
+<br>
+<button (click)="Refresh()">取得新的 heros 資料 (全新物件)</button>
+<br>
+<ul>
+  <li *ngFor="let hero of heroes" *ngForTrackBy="trackByHeroes">{{hero.fullName}}</li>
+</ul>
