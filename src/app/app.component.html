@@ -2,7 +2,9 @@
   {{title}}
 </h1>
 
-<div template="ngIf:currentHero">Hello, {{currentHero.firstName}}</div>
+<template [ngIf]="currentHero">
+  <div>Hello, {{currentHero.firstName}}</div>
+</template>
 
 <!--
   由於 ngIf 會透過 nullHero 判斷是否輸出這個 div 的 DOM，
