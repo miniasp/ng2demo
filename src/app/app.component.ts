@@ -11,4 +11,8 @@ export class AppComponent {
 
   gender = 'M';
 
+  chooseGender(gender) {
+    this.gender = gender;
+  }
+
 }

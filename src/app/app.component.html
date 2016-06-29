@@ -3,17 +3,38 @@
 </h1>
 
 請選擇性別：
-<select [(ngModel)]="gender">
+<select #select1 (change)="chooseGender(select1.value)">
   <option value="">請選擇</option>
   <option value="M">男性</option>
   <option value="F">女性</option>
 </select>
-
-<br><br>
+{{ select1.value }} ( 使用 #select1 語法 )
 
 您選擇的是：
-<span [ngSwitch]="gender">
+<span [ngSwitch]="select1.value">
   <span *ngSwitchCase="'M'">男性</span>
   <span *ngSwitchCase="'F'">女性</span>
   <span *ngSwitchDefault>未知</span>
 </span>
+
+
+<br><br>
+
+請選擇性別：
+<select ref-select2 (change)="chooseGender(select2.value)">
+  <option value="">請選擇</option>
+  <option value="M">男性</option>
+  <option value="F">女性</option>
+</select>
+{{ select2.value }} ( 使用 ref-select2 語法 )
+
+您選擇的是：
+<span [ngSwitch]="select2.value">
+  <span *ngSwitchCase="'M'">男性</span>
+  <span *ngSwitchCase="'F'">女性</span>
+  <span *ngSwitchDefault>未知</span>
+</span>
+
+<br><br>
+
+透過元件 gender 屬性綁定的值為: {{ gender }}
