@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+  currentHero = {
+    firstName: 'Will'
+  };
+
+  onSubmit(form) {
+    console.log(form);
+    alert('表單送出');
+  }
 }
