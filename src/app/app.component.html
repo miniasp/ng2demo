@@ -1,3 +1,8 @@
 <h1>
   {{title}}
 </h1>
+
+<!-- 透過 isSpecial 屬性動態切換 "special" 樣式類別 -->
+<div [class.special]="isSpecial">The class binding is special</div>
+
+<div [ngClass]="setClasses()">This div is saveable and special</div>

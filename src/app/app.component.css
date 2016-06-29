@@ -1,0 +1,12 @@
+.special {
+  color: red;
+  font-weight: bold;
+}
+
+.saveable {
+  text-decoration: underline;
+}
+
+.modified {
+  font-style: italic;
+}
