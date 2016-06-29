@@ -1,3 +1,14 @@
 <h1>
   {{title}}
 </h1>
+
+<div
+  [style.font-size]="isSpecial ? 'x-large' : 'smaller'"
+  [style.color]="color"
+  >
+  This div is x-large.
+</div>
+
+<div [ngStyle]="setStyles()">
+  This div is italic, normal weight, and extra large (24px).
+</div>
