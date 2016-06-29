@@ -1,3 +1,19 @@
 <h1>
   {{title}}
 </h1>
+
+請選擇性別：
+<select [(ngModel)]="gender">
+  <option value="">請選擇</option>
+  <option value="M">男性</option>
+  <option value="F">女性</option>
+</select>
+
+<br><br>
+
+您選擇的是：
+<span [ngSwitch]="gender">
+  <span *ngSwitchCase="'M'">男性</span>
+  <span *ngSwitchCase="'F'">女性</span>
+  <span *ngSwitchDefault>未知</span>
+</span>
