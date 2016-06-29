@@ -1,3 +1,24 @@
 <h1>
   {{title}}
 </h1>
+
+<div *ngIf="currentHero">Hello, {{currentHero.firstName}}</div>
+
+<!--
+  由於 ngIf 會透過 nullHero 判斷是否輸出這個 div 的 DOM，
+  因此 `nullHero.firstName` 絕對不會有出錯的可能！
+-->
+<div *ngIf="nullHero">Hello, {{nullHero.firstName}}</div>
+
+<!-- Hero Detail is not in the DOM because isActive is false-->
+<hero-detail *ngIf="isActive"></hero-detail>
+
+<!-- isSpecial is true -->
+<div [class.hidden]="!isSpecial">Show with class</div>
+<div [class.hidden]="isSpecial">Hide with class</div>
+
+<!-- HeroDetail is in the DOM but hidden -->
+<hero-detail [class.hidden]="isSpecial"></hero-detail>
+
+<div [style.display]="isSpecial ? 'block' : 'none'">Show with style</div>
+<div [style.display]="isSpecial ? 'none'  : 'block'">Hide with style</div>
