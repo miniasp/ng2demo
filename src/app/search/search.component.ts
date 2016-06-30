@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  keyword: string;
+
   constructor() {}
 
   ngOnInit() {
@@ -15,9 +17,16 @@ export class SearchComponent implements OnInit {
 
   onKeyUp($event) {
     console.log('您剛剛輸入: ' + $event.key + ' ('+$event.keyCode+')');
+    if($event.keyCode == 27) {
+      this.keyword = '';
+    }
   }
 
   onCopy($event) {
     console.log($event);
+  }
+
+  clearKeyword() {
+    this.keyword = '';
   }
 }

@@ -5,7 +5,13 @@
         <input type="text"
           placeholder="請輸入搜尋關鍵字" accesskey="s"
           (keyup)="onKeyUp($event)"
-          (copy)="onCopy($event)"><input type="button" value="搜尋" id="searchbutton">
+          (copy)="onCopy($event)"
+
+          [(ngModel)]="keyword"
+
+          ><input type="button" value="搜尋" id="searchbutton">
+          <input type="button" value="清除" (click)="clearKeyword()">
+          {{ keyword }}
       </div>
   </div>
 </div>
