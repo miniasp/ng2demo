@@ -8,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  counter: number = 0;
+
   page = {
-    title: "The Will Will Web",
-    summary: "記載著 Will 在網路世界的學習心得與技術分享"
+    title: 'The Will Will Web',
+    summary: '記載著 Will 在網路世界的學習心得與技術分享'
   };
 
+  clickCount($event) {
+    console.log($event);
+    this.counter++;
+    this.page.summary = '記載著 Will 在網路世界的學習心得與技術分享 +' + this.counter;
+  }
+
   constructor() {
-    this.page.title = "TEST";
+    this.page.title = 'TEST';
   }
 
   ngOnInit() {

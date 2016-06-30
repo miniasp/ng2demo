@@ -28,7 +28,7 @@
       <img src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web">
       <hgroup class="pull-left">
         <h1><a href="http://blog.miniasp.com/">{{page.title}}</a></h1>
-        <h3>{{page.summary}}</h3>
+        <h3 (click)="clickCount($event)">{{page.summary}}</h3>
       </hgroup>
       <div id="social-icons" class="pull-right social-icon">
         <a href="https://www.facebook.com/will.fans" title="Will 保哥的技術交流中心" target="_blank">
